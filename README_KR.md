@@ -31,6 +31,7 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
   "BeneficiaryVASP": {...}
 }
 ```
+응답 시 `customerIdentification`와 같은 Beneficiary 의 정보를 Beneficiary 객체 내에 추가 기입하는것도 권장합니다.
 
 ### Originating natual person 예제
 ```

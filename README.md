@@ -31,6 +31,7 @@ When beneficiary VASP response to originator, it should complete the IVMS101 for
   "BeneficiaryVASP": {...}
 }
 ```
+You may also include more Beneficiary information in Beneficiary Object such as `customerIdentification`.
 
 ### Example of an originating natual person
 ```
