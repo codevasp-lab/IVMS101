@@ -14,9 +14,9 @@ CODE uses the IVMS101 standard to exchange personal information related to virtu
 As an originator VASP, you need to send following to beneficiary VSAP. You should know the entityId of beneficiary from CODE, however, you still do not know their VASP information, thus, only send following objects.
 ```
 {
-  "originator": {...},
-  "beneficiary": {...},
-  "originatingVASP": {...}
+  "Originator": {...},
+  "Beneficiary": {...},
+  "OriginatingVASP": {...}
 }
 ```
 
@@ -24,10 +24,10 @@ As an originator VASP, you need to send following to beneficiary VSAP. You shoul
 When beneficiary VASP response to originator, it should complete the IVMS101 format as following.
 ```
 {
-  "originator": {...},
-  "beneficiary": {...},
-  "originatingVASP": {...},
-  "beneficiaryVASP": {...}
+  "Originator": {...},
+  "Beneficiary": {...},
+  "OriginatingVASP": {...},
+  "BeneficiaryVASP": {...}
 }
 ```
 
