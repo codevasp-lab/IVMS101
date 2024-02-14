@@ -108,6 +108,7 @@
             "buildingName":"Example Building",
             "postcode":"00000",
             "townName":"Seoul",
+            "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
             "countrySubDivision":"N/A",
             "country":"KR"
           }
@@ -140,6 +141,7 @@
             "buildingName":"Example Building",
             "postcode":"00000",
             "townName":"Seoul",
+            "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
             "countrySubDivision":"N/A",
             "country":"KR"
           }

@@ -135,12 +135,8 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
          "geographicAddress":[
             {
                "addressType":"GEOG",
-               "streetName":"Example Street",
-               "buildingNumber":"123",
-               "buildingName":"Example Building",
-               "postcode":"00000",
+               "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
                "townName":"Seoul",
-               "countrySubDivision":"N/A",
                "country":"KR"
             }
          ],
@@ -257,12 +253,8 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
          "geographicAddress":[
             {
                "addressType":"GEOG",
-               "streetName":"Example Street",
-               "buildingNumber":"456",
-               "buildingName":"Example Building",
-               "postcode":"00000",
+               "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
                "townName":"Seoul",
-               "countrySubDivision":"N/A",
                "country":"KR"
             }
          ],

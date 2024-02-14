@@ -135,12 +135,8 @@ You may also include more Beneficiary information in Beneficiary Object such as 
          "geographicAddress":[
             {
                "addressType":"GEOG",
-               "streetName":"Example Street",
-               "buildingNumber":"123",
-               "buildingName":"Example Building",
-               "postcode":"00000",
+               "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
                "townName":"Seoul",
-               "countrySubDivision":"N/A",
                "country":"KR"
             }
          ],
@@ -257,12 +253,8 @@ You may also include more Beneficiary information in Beneficiary Object such as 
          "geographicAddress":[
             {
                "addressType":"GEOG",
-               "streetName":"Example Street",
-               "buildingNumber":"456",
-               "buildingName":"Example Building",
-               "postcode":"00000",
+               "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
                "townName":"Seoul",
-               "countrySubDivision":"N/A",
                "country":"KR"
             }
          ],
