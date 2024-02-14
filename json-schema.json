@@ -458,25 +458,6 @@
         "LEIX",
         "MISC"
       ]
-    },
-    "TransliterationMethodCode": {
-      "title": "TransliterationMethodCode",
-      "type": "string",
-      "enum": [
-        "ARAB",
-        "ARAN",
-        "ARMN",
-        "CYRL",
-        "DEVA",
-        "GEOR",
-        "GREK",
-        "HANI",
-        "HEBR",
-        "KANA",
-        "KORE",
-        "THAI",
-        "OTHR"
-      ]
     }
   }
 }
