@@ -1,37 +1,37 @@
 ## IVMS101 standard
 
-CODE uses the IVMS101 standard to exchange personal information related to virtual transaction. [https://intervasp.org/](https://intervasp.org/)
-- A field name of a message is expressed with camelCase whose first character starts with a lowercase. But, 'Originator', 'Beneficiary', 'OriginatorVASP', and 'BeneficiaryVASP' objects corresponding to Entity in ivms101 are expressed with PascalCase.
-- The values of all fields are not case-sensitive unless otherwise specified.
-- The values of all fields are always expressed with a UTF-8 encoded string. (including boolean, integer, real number, etc.)
-- In principle, the values of all fields shall be written in English except when Local Language is permitted.
-- You may find more information about the IVMS101 rule for CODE protocol [here](https://codevasp.gitbook.io/code-api-doc-en/api-reference/ivms101).
-- Please refer to complete natual person example json in complete-example.json file.
-- Please refer to complete legal person example json in complete-example-legal-person.json file.
-- Complete json schema is provided in json-schema.json file.
+CODE 는 가상 거래와 관련한 개인정보를 교환하기 위해 IVMS101 표준을 사용합니다. [https://intervasp.org/](https://intervasp.org/)
+- 메시지의 필드 이름은 첫글자를 소문자로 시작하는 camelCase 로 표기합니다. 단, IVMS101 에서 Entity 에 해당하는 'Originator', 'Beneficiary', 'OriginatorVASP', 'BeneficiaryVASP' 객체는 PascalCase 로 표기합니다.
+- 모든 필드의 값(Value)는 별도로 명시된 내용이 없으면 대소문자를 구분하지 않습니다.
+- 모든 필드의 값(Value)는 항상 UTF-8 인코딩된 문자열로 표현합니다. (boolean 이나 정수, 실수 등 포함)
+- 모든 필드의 값(Value)는 한글이 허용되는 경우를 제외하면 영어 표기를 원칙으로 합니다.
+- CODE 프로토콜의 IVMS101 규칙은 [여기](https://codevasp.gitbook.io/code-api-doc-en/api-reference/ivms101)에서 더 자세히 볼 수 있습니다..
+- 개인 회원 간 전송의 예제는 complete-example.json 파일을 참고하세요.
+- 법인 회원 간 전송의 예제는 complete-example-legal-person.json 파일을 참고하세요.
+- 전체 json 스키마는 json-schema.json 파일에 있습니다.
 
-### Initial IVMS101 from an originator VASP
-As an originator VASP, you need to send following to beneficiary VSAP. You should know the entityId of beneficiary from CODE, however, you still do not know their VASP information, thus, only send following objects.
+### Originator VASP 에서 자산 이전 허가 요청을 할때
+Originator VASP로서 다음의 오브젝트를 beneficiary VSAP에게 전송해야합니다. CODE의 VASP LIST API로 부터 이미 entityId를 알고 있으나, VASP의 정보를 정확히 모르기 때문에 아래와 같이 BeneficiaryVASP 객체는 보내지 않습니다.
 ```
 {
-  "originator": {...},
-  "beneficiary": {...},
-  "originatingVASP": {...}
+  "Originator": {...},
+  "Beneficiary": {...},
+  "OriginatingVASP": {...}
 }
 ```
 
-### Response IVMS101 from a beneficiary VASP
-When beneficiary VASP response to originator, it should complete the IVMS101 format as following.
+### Beneficiary VASP의 응답
+Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 추가하여 응답합니다.
 ```
 {
-  "originator": {...},
-  "beneficiary": {...},
-  "originatingVASP": {...},
-  "beneficiaryVASP": {...}
+  "Originator": {...},
+  "Beneficiary": {...},
+  "OriginatingVASP": {...},
+  "BeneficiaryVASP": {...}
 }
 ```
 
-### Example of an originating natual person
+### Originating natual person 예제
 ```
 "Originator": {
    "originatorPersons":[
@@ -68,7 +68,7 @@ When beneficiary VASP response to originator, it should complete the IVMS101 for
 }
 ```
 
-### Example of an originating legal person
+### Originating legal person 예제
 ```
 "Originator": {
    "originatorPersons":[
@@ -117,7 +117,7 @@ When beneficiary VASP response to originator, it should complete the IVMS101 for
 }
 ```
 
-### Example of an originating VASP
+### Originating VASP 예제
 ```
 "OriginatingVASP": {
    "originatingVASP":{
@@ -153,7 +153,7 @@ When beneficiary VASP response to originator, it should complete the IVMS101 for
 }
 ```
 
-### Example of a beneficiary natual person
+### Beneficiary natual person 예제
 ```
 "Beneficiary": {
    "beneficiaryPersons":[
@@ -190,7 +190,7 @@ When beneficiary VASP response to originator, it should complete the IVMS101 for
 }
 ```
 
-### Example of a beneficiary legal person
+### Beneficiary legal person 예제
 ```
 "Beneficiary": {
    "beneficiaryPersons":[
@@ -239,7 +239,7 @@ When beneficiary VASP response to originator, it should complete the IVMS101 for
 }
 ```
 
-### Example of a beneficiary VASP 
+### Beneficiary VASP 예제
 ```
 "BeneficiaryVASP": {
    "beneficiaryVASP":{
