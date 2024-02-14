@@ -379,8 +379,7 @@
         "accountNumber": {
           "type": "array",
           "items": {
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9' ]{1,100}$"
+            "type": "string"
           }
         }
       },
