@@ -314,7 +314,7 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
 |IDCD| Identity card number                         | 국가 기관에 의해 신분증에 할당된 번호.                                                                                |
 |LEIX| Legal Entity Identifier                          | ISO 17442에 따라 할당된 법인 식별 코드(Legal Entity Identifier, LEI)                                                                    |
 |MISC| Unspecified                         | 발신자가 분류를 결정할 수 없거나 다른 방식으로 분류할 수 없지만 알려져 있을 수 있는 국가 식별자. |
-* CODE는 회원사들을 위해 K-LEI 발급 수수료 면제 프로그램을 제공합니다. 자세한 정보는 홈페이지를 방문해 주세요. [https://www.codevasp.com/page-lei](https://www.codevasp.com/page-lei)
+* CODE는 회원사들을 위해 K-LEI 발급 수수료 면제 프로그램을 제공합니다. 자세한 정보는 홈페이지를 방문해 주세요. [https://www.codevasp.com/ko/page-lei](https://www.codevasp.com/ko/page-lei)
 
 
 
