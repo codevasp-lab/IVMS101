@@ -352,20 +352,6 @@
         }
       }
     },
-    "IntermediaryVASP": {
-      "title": "IntermediaryVASP",
-      "type": "object",
-      "properties": {
-        "intermediaryVASP": {
-          "$ref": "#/definitions/Person"
-        },
-        "sequence": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 9007199254740991
-        }
-      }
-    },
     "Originator": {
       "title": "Originator",
       "type": "object",
