@@ -1,6 +1,6 @@
 ## IVMS101 standard
 
-CODE 는 가상 거래와 관련한 개인정보를 교환하기 위해 IVMS101 표준을 사용합니다. [https://intervasp.org/](https://intervasp.org/)
+CODE 는 가상 자산 거래와 관련한 개인정보를 교환하기 위해 IVMS101 표준을 사용합니다. [https://intervasp.org/](https://intervasp.org/)
 - 메시지의 필드 이름은 첫글자를 소문자로 시작하는 camelCase 로 표기합니다. 단, IVMS101 에서 Entity 에 해당하는 'Originator', 'Beneficiary', 'OriginatorVASP', 'BeneficiaryVASP' 객체는 PascalCase 로 표기합니다.
 - 모든 필드의 값(Value)는 별도로 명시된 내용이 없으면 대소문자를 구분하지 않습니다.
 - 모든 필드의 값(Value)는 항상 UTF-8 인코딩된 문자열로 표현합니다. (boolean 이나 정수, 실수 등 포함)
