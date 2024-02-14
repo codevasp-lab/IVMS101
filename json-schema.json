@@ -1,24 +1,24 @@
 {
   "type": "object",
   "properties": {
-    "originator": {
+    "Originator": {
       "$ref": "#/definitions/Originator"
     },
-    "beneficiary": {
+    "Beneficiary": {
       "$ref": "#/definitions/Beneficiary"
     },
-    "originatingVASP": {
+    "OriginatingVASP": {
       "$ref": "#/definitions/OriginatingVASP"
     },
-    "beneficiaryVASP": {
+    "BeneficiaryVASP": {
       "$ref": "#/definitions/BeneficiaryVASP"
     }
   },
   "required": [
-    "originator",
-    "beneficiary",
-    "originatingVASP",
-    "beneficiaryVASP"
+    "Originator",
+    "Beneficiary",
+    "OriginatingVASP",
+    "BeneficiaryVASP"
   ],
   "definitions": {
     "LocalNaturalPersonNameId": {
