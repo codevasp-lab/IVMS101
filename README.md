@@ -135,8 +135,8 @@ You may also include more Beneficiary information in Beneficiary Object such as 
          "geographicAddress":[
             {
                "addressType":"GEOG",
-               "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
                "townName":"Seoul",
+               "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
                "country":"KR"
             }
          ],
@@ -252,9 +252,9 @@ You may also include more Beneficiary information in Beneficiary Object such as 
          },
          "geographicAddress":[
             {
-               "addressType":"GEOG",
-               "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
+               "addressType":"GEOG", 
                "townName":"Seoul",
+               "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
                "country":"KR"
             }
          ],
