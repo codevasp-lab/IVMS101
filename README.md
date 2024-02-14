@@ -276,3 +276,45 @@ You may also include more Beneficiary information in Beneficiary Object such as 
    }
 }
 ```
+
+### ENUM List
+#### NaturalPersonNameTypeCode
+|Code|Name| Description                                                                                                                                        |
+|------|---|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|ALIA|Alias name| A name other than the legal name by which a natural person is also known.                                                                          |
+|BIRT|Name at birth| The name given to a natural person at birth.                                                                                                       |
+|MAID|Maiden name| The original name of a natural person who has changed their name after marriage.                                                                   |
+|LEGL|Legal name| The name that identifies a natural person for legal, official or administrative purposes.                                                          |
+|MISC|Unspecified| A name by which a natural person maybe known but which cannot otherwise be categorized or the category of which the sender is unable to determine. |
+
+#### LegalPersonNameTypeCode
+|Code|Name| Description                                                                                                                                        |
+|------|---|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|LEGL|Legal name| Official name under which an organisation is registered.                                                                          |
+|SHRT|Short name| Specifies the short name of the organisation.                                                                                                 |
+|TRAD|Trading name| Name used by a business for commercial purposes, although its registered legal name, used for contracts and other formal situations, may be another.                                                               |
+ 
+#### AddressTypeCode
+|Code|Name| Description                                                                                                           |
+|------|---|-----------------------------------------------------------------------------------------------------------------------|
+|HOME|Residential| Address is the home address.                                                                                          |
+|BIZZ|Business| Address is the business address.                                                                                      |
+|GEOG|Geographic| Address is the unspecified physical(geographical) address suitable for identification of the natural or legal person. |
+
+#### NationalIdentifierTypeCode
+|Code| Name                               | Description                                                                                                                                    |
+|------|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+|ARNU| Alien registration number          | Number assigned by a government agency to identify foreign nationals.                                                                          |
+|CCPT| Passport number                    | Number assigned by a passport authority.                                                                                                       |
+|RAID| Registration authority identifier  | Identifier of a legal entity as maintained by a registration authority.                                                                        |
+|DRLC| Driver license number              | Number assigned to a driver's license.                                                                                                         |
+|FIIN| Foreign investment identity number | Number assigned to a foreign investor(other than the alien number).                                                                            |
+|TXID| Tax identification number                         | Number assigned by a tax authority to an entity.                                                                                               |
+|SOCS| Social security number                         | Number assigned by a social security agency.                                                                                                   |
+|IDCD| Identity card number                         | Number assigned by a national authority to an identity card.                                                                                   |
+|LEIX| Legal Entity Identifier                          | Legal Entity Identifier (LEI) assigned in accordance with ISO 174421                                                                           |
+|MISC| Unspecified                         | A national identifier which may be known but which cannot otherwise be categorized or the category of which the sender is unable to determine. |
+* CODE provides K-LEI issuance fee waiver program for alliance members. For more information please visit [https://www.codevasp.com/page-lei](https://www.codevasp.com/page-lei).
+
+
+

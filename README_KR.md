@@ -276,3 +276,45 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
    }
 }
 ```
+
+### ENUM 목록
+#### NaturalPersonNameTypeCode
+| 코드   | 이름            | 설명                                                                                                                                                 |
+|------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| ALIA | Alias name    | 법적 이름 이외에 자연인이 알려진 다른 이름.                                                                        |
+| BIRT | Name at birth | 출생 시 자연인에게 부여된 이름.                                                                                                       |
+| MAID | Maiden name   | 결혼 후 이름을 변경한 자연인의 본래 이름.                                                               |
+| LEGL | Legal name    | 법적, 공식적 또는 행정적 목적으로 자연인을 식별하는 이름.                                                          |
+| MISC | Unspecified   | 자연인이 알려져 있을 수 있지만 다른 방식으로 분류할 수 없거나 발신자가 분류를 결정할 수 없는 카테고리의 이름. |
+
+#### LegalPersonNameTypeCode
+|코드   | 이름            | 설명                                                                  |
+|------|---|---------------------------------------------------------------------|
+|LEGL|Legal name| 조직이 등록된 공식 이름.                                                      |
+|SHRT|Short name| 조직의 약칭.                                                             |
+|TRAD|Trading name| 비즈니스가 상업적 목적으로 사용하는 이름이며, 계약 및 기타 공식적인 상황에 사용되는 등록된 법적 이름은 다를 수 있음. |
+
+#### AddressTypeCode
+|코드   | 이름            | 설명                                                                                                        |
+|------|---|--------------------------------------------------------------------------------------------------------------------|
+|HOME|Residential| 거주지 주소.                                                                                      |
+|BIZZ|Business| 사업장 주소.                                                                                   |
+|GEOG|Geographic| 자연인 또는 법인을 식별하기에 적합한 구체적으로 명시되지 않은 물리적(지리적) 주소. |
+
+#### NationalIdentifierTypeCode
+|코드   | 이름            | 설명                                                                                                                                             |
+|------|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+|ARNU| Alien registration number          | 외국인을 식별하기 위해 정부 기관에 의해 할당된 번호.                                                                                                                 |
+|CCPT| Passport number                    | 여권 발급 기관에 의해 할당된 번호.                                                                                                                           |
+|RAID| Registration authority identifier  | 법인의 등록 기관에서 관리하는 법인의 식별자.                                                                                                                      |
+|DRLC| Driver license number              | 운전 면허증에 할당된 번호.                                                                                                                                |
+|FIIN| Foreign investment identity number | 외국인 투자자에게 할당된 번호(외국인 등록번호와는 다름).                                                                                                               |
+|TXID| Tax identification number                         | 세무 당국에 의해 법인 혹은 개인에게 할당된 번호.                                                                                                                   |
+|SOCS| Social security number                         | 사회 보장 기관에 의해 할당된 번호.                                                                                                |
+|IDCD| Identity card number                         | 국가 기관에 의해 신분증에 할당된 번호.                                                                                |
+|LEIX| Legal Entity Identifier                          | ISO 17442에 따라 할당된 법인 식별 코드(Legal Entity Identifier, LEI)                                                                    |
+|MISC| Unspecified                         | 발신자가 분류를 결정할 수 없거나 다른 방식으로 분류할 수 없지만 알려져 있을 수 있는 국가 식별자. |
+* CODE는 회원사들을 위해 K-LEI 발급 수수료 면제 프로그램을 제공합니다. 자세한 정보는 홈페이지를 방문해 주세요. [https://www.codevasp.com/page-lei](https://www.codevasp.com/page-lei)
+
+
+
