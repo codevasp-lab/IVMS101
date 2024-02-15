@@ -31,7 +31,7 @@
         },
         "secondaryIdentifier": {
           "type": "string",
-          "pattern": "^.{1,100}$"
+          "pattern": "^.{0,100}$"
         },
         "nameIdentifierType": {
           "title": "NaturalPersonNameTypeCode",
@@ -80,59 +80,59 @@
         },
         "department": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,50}$"
+          "pattern": "^.{1,50}$"
         },
         "subDepartment": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,70}$"
+          "pattern": "^.{1,70}$"
         },
         "streetName": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,70}$"
+          "pattern": "^.{1,70}$"
         },
         "buildingNumber": {
           "type": "string"
         },
         "buildingName": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,16}$"
+          "pattern": "^.{1,16}$"
         },
         "floor": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,70}$"
+          "pattern": "^.{1,70}$"
         },
         "postBox": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,16}$"
+          "pattern": "^.{1,16}$"
         },
         "room": {
           "type": "string"
         },
         "postCode": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,16}$"
+          "pattern": "^.{1,16}$"
         },
         "townName": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,35}$"
+          "pattern": "^.{1,35}$"
         },
         "townLocationName": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,35}$"
+          "pattern": "^.{1,35}$"
         },
         "districtName": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,35}$"
+          "pattern": "^.{1,35}$"
         },
         "countrySubDivision": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,35}$"
+          "pattern": "^.{1,35}$"
         },
         "addressLine": {
           "type": "array",
           "items": {
             "type": "string",
-            "pattern": "^[a-zA-Z0-9' ]{1,70}$"
+            "pattern": "^.{1,70}$"
           }
         },
         "country": {
@@ -147,7 +147,7 @@
       "properties": {
         "nationalIdentifier": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,35}$"
+          "pattern": "^.{1,35}$"
         },
         "nationalIdentifierType": {
           "title": "NationalIdentifierTypeCode",
@@ -205,7 +205,7 @@
         },
         "customerIdentification": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,50}$"
+          "pattern": "^.{1,50}$"
         },
         "dateAndPlaceOfBirth": {
           "$ref": "#/definitions/DateAndPlaceOfBirth"
@@ -273,7 +273,7 @@
         },
         "placeOfBirth": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,70}$"
+          "pattern": "^.{1,70}$"
         }
       }
     },
@@ -292,7 +292,7 @@
         },
         "customerNumber": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,50}$"
+          "pattern": "^.{1,50}$"
         },
         "nationalIdentification": {
           "$ref": "#/definitions/NationalIdentification"
@@ -339,7 +339,7 @@
       "properties": {
         "legalPersonName": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9' ]{1,100}$"
+          "pattern": "^.{1,100}$"
         },
         "legalPersonNameIdentifierType": {
           "title": "LegalPersonNameTypeCode",
