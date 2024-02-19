@@ -10,6 +10,7 @@ CODE 는 가상 자산 거래와 관련한 개인정보를 교환하기 위해 I
 - 법인 회원 간 전송의 예제는 complete-example-legal-person.json 파일을 참고하세요.
 - 전체 json 스키마는 json-schema.json 파일에 있습니다.
 - [https://www.jsonschemavalidator.net/](https://www.jsonschemavalidator.net/) 를 이용해서 json 포맷을 검증 하실 수 있습니다.
+  - Select schema: IVMS101 by CODE Protocol 선택하셔서 사용하시면 됩니다.
 
 ### Originator VASP 에서 자산 이전 허가 요청을 할때
 Originator VASP로서 다음의 오브젝트를 beneficiary VSAP에게 전송해야합니다. CODE의 VASP LIST API로 부터 이미 entityId를 알고 있으나, VASP의 정보를 정확히 모르기 때문에 아래와 같이 BeneficiaryVASP 객체는 보내지 않습니다.
