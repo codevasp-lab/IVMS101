@@ -10,6 +10,7 @@ CODE uses the IVMS101 standard to exchange personal information related to virtu
 - Please refer to complete legal person example json in complete-example-legal-person.json file.
 - Complete json schema is provided in json-schema.json file.
 - You may use [https://www.jsonschemavalidator.net/](https://www.jsonschemavalidator.net/) to validate your json format.
+  - Select schema: IVMS101 by CODE Protocol
 
 ### Initial IVMS101 from an originator VASP
 As an originator VASP, you need to send following to beneficiary VSAP. You should know the entityId of beneficiary from CODE, however, you still do not know their VASP information, thus, only send following objects.
