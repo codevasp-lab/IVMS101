@@ -1,0 +1,158 @@
+{
+  "Originator": {
+    "originatorPersons":[
+      {
+        "legalPerson":{
+          "name":{
+            "nameIdentifier":[
+              {
+                "legalPersonName":"Coinone Inc.",
+                "legalPersonNameIdentifierType":"LEGL"
+              }
+            ]
+          },
+          "nationalIdentification":{
+            "nationalIdentifier":"XXXXXXXXXXXXXXXXXXXX",
+            "nationalIdentifierType":"LEIX"
+          },
+          "customerIdentification":"customernumber in Max 50 Text",
+          "countryOfRegistration":"KR"
+        }
+      },
+      {
+        "naturalPerson":{
+          "name":{
+            "nameIdentifier":[
+              {
+                "primaryIdentifier":"Barnes",
+                "secondaryIdentifier":"Robert",
+                "nameIdentifierType":"LEGL"
+              }
+            ],
+            "localNameIdentifier":[
+              {
+                "primaryIdentifier":"로버트 반스",
+                "secondaryIdentifier":"",
+                "nameIdentifierType":"LEGL"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "accountNumber":[
+      "rJChk8e71gxVhyJSr1srzZxWhVisWMMYKZ:tag or memo"
+    ]
+  },
+  "Beneficiary": {
+    "beneficiaryPersons":[
+      {
+        "legalPerson":{
+          "name":{
+            "nameIdentifier":[
+              {
+                "legalPersonName":"Korbit Inc.",
+                "legalPersonNameIdentifierType":"LEGL"
+              }
+            ]
+          },
+          "nationalIdentification":{
+            "nationalIdentifier":"XXXXXXXXXXXXXXXXXXXX",
+            "nationalIdentifierType":"LEIX"
+          },
+          "customerIdentification":"customernumber in Max 50 Text",
+          "countryOfRegistration":"KR"
+        }
+      },
+      {
+        "naturalPerson":{
+          "name":{
+            "nameIdentifier":[
+              {
+                "primaryIdentifier":"Smith",
+                "secondaryIdentifier":"Alice",
+                "nameIdentifierType":"LEGL"
+              }
+            ],
+            "localNameIdentifier":[
+              {
+                "primaryIdentifier":"앨리스 스미스",
+                "secondaryIdentifier":"",
+                "nameIdentifierType":"LEGL"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "accountNumber":[
+      "rHcFoo6a9qT5NHiVn1THQRhsEGcxtYCV4d:tag or memo"
+    ]
+  },
+  "OriginatingVASP": {
+    "originatingVASP":{
+      "legalPerson":{
+        "name":{
+          "nameIdentifier":[
+            {
+              "legalPersonName":"Korbit Inc.",
+              "legalPersonNameIdentifierType":"LEGL"
+            }
+          ]
+        },
+        "geographicAddress":[
+          {
+            "addressType":"GEOG",
+            "streetName":"Example Street",
+            "buildingNumber":"123",
+            "buildingName":"Example Building",
+            "postcode":"00000",
+            "townName":"Seoul",
+            "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
+            "countrySubDivision":"N/A",
+            "country":"KR"
+          }
+        ],
+        "nationalIdentification":{
+          "nationalIdentifier":"EXAMPLE-TAX-ID",
+          "nationalIdentifierType":"RAID",
+          "registrationAuthority":"RA000657"
+        },
+        "countryOfRegistration":"KR"
+      }
+    }
+  },
+  "BeneficiaryVASP": {
+    "beneficiaryVASP":{
+      "legalPerson":{
+        "name":{
+          "nameIdentifier":[
+            {
+              "legalPersonName":"Coinone Inc.",
+              "legalPersonNameIdentifierType":"LEGL"
+            }
+          ]
+        },
+        "geographicAddress":[
+          {
+            "addressType":"GEOG",
+            "streetName":"Example Street",
+            "buildingNumber":"456",
+            "buildingName":"Example Building",
+            "postcode":"00000",
+            "townName":"Seoul",
+            "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
+            "countrySubDivision":"N/A",
+            "country":"KR"
+          }
+        ],
+        "nationalIdentification":{
+          "nationalIdentifier":"6948624434",
+          "nationalIdentifierType":"RAID",
+          "registrationAuthority":"RA000657"
+        },
+        "countryOfRegistration":"KR"
+      }
+    }
+  }
+}
