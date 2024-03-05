@@ -1,7 +1,7 @@
 ## IVMS101 standard
 
 CODE uses the IVMS101 standard to exchange personal information related to virtual asset transaction. [https://intervasp.org/](https://intervasp.org/)
-- A field name of a message is expressed with camelCase whose first character starts with a lowercase. But, 'Originator', 'Beneficiary', 'OriginatorVASP', and 'BeneficiaryVASP' objects corresponding to Entity in ivms101 are expressed with PascalCase.
+- A field name of a message is expressed with camelCase whose first character starts with a lowercase. But, `Originator`, `Beneficiary`, `OriginatorVASP`, and `BeneficiaryVASP` objects corresponding to Entity in ivms101 are expressed with PascalCase.
 - The values of all fields are not case-sensitive unless otherwise specified.
 - The values of all fields are always expressed with a UTF-8 encoded string. (including boolean, integer, real number, etc.)
 - In principle, the values of all fields shall be written in English except when Local Language is permitted.
