@@ -337,23 +337,23 @@ You may also include more Beneficiary information in Beneficiary Object such as 
       - naturalPerson(Required or Optional): This is an object used to set information about an individual. It is Required when `isExceedingThreshold` is true, and Optional when `isExceedingThreshold` is false.
       - legalPerson(Required or Optional): This is an object used to set information about a legal entity. It is Required when `isExceedingThreshold` is true, and Optional when `isExceedingThreshold` is false.
     - accountNumber(Required): This is a wallet address to which the assets are transferred If tag or memo value is required, separate them with `:` and make one string.
-      - OriginatingVASP(Required): Refers to the VASP which initiates the Virtual Asset(VA) transfer and transfers the VA upon receiving the request for a VA transfer on behalf of the originator.
-  - OriginatingVASP(Required):
-    - legalPerson(Required): This is the information on the legal person of a VASP to whom you want to transfer an asset
-      - name(Required):
-        - nameIdentifier: Name information following international notation. (English name)
-          - legalPersonName: English legal person name
-          - legalPersonNameIdentifierType: Fixed as `LEGL`legal)
-      - geographicAddress(Optional): location in the registration documents of a legal person. You shall enter one of the legal person's registration number and address.
-        - addressType: Enter `GEOG`.
-        - townName: Enter the state/province name.
-        - addressLine: Enter the townName sub-address in the array format array of a string.
-        - country: This is a two-letter country code determined by ISO-3166-1 alpha-2. Ex) KR, JP, US, etc.
-      - nationalIdentification(Optional): This is a legal person identification number which has been certified by the country i.e.a business registration number. You shall enter either the legal person's address or registration number.
-        - nationalIdentifier: Business registration number
-        - nationalIdentifierType: `RAID`(Registration authority identifier)
-        - registrationAuthority: `RA000657` (Korea National Tax Service's RA identification number)
-      - countryOfRegistration(Required): country of registration. This is a two-letter country code determined by ISO-3166-1 alpha-2. Ex) KR, JP, US, etc.
+  - OriginatingVASP(Required): Refers to the VASP which initiates the Virtual Asset(VA) transfer and transfers the VA upon receiving the request for a VA transfer on behalf of the originator.
+    - originatingVASP(Required):
+      - legalPerson(Required): This is the information on the legal person of a VASP to whom you want to transfer an asset
+        - name(Required):
+          - nameIdentifier: Name information following international notation. (English name)
+            - legalPersonName: English legal person name
+            - legalPersonNameIdentifierType: Fixed as `LEGL`legal)
+        - geographicAddress(Optional): location in the registration documents of a legal person. You shall enter one of the legal person's registration number and address.
+          - addressType: Enter `GEOG`.
+          - townName: Enter the state/province name.
+          - addressLine: Enter the townName sub-address in the array format array of a string.
+          - country: This is a two-letter country code determined by ISO-3166-1 alpha-2. Ex) KR, JP, US, etc.
+        - nationalIdentification(Optional): This is a legal person identification number which has been certified by the country i.e.a business registration number. You shall enter either the legal person's address or registration number.
+          - nationalIdentifier: Business registration number
+          - nationalIdentifierType: `RAID`(Registration authority identifier)
+          - registrationAuthority: `RA000657` (Korea National Tax Service's RA identification number)
+        - countryOfRegistration(Required): country of registration. This is a two-letter country code determined by ISO-3166-1 alpha-2. Ex) KR, JP, US, etc.
 
 ### Asset Transfer Authorization IVMS101 Response
 - ivms101(Required): This is an object defined according to the IVMS101 international standard for each subject involved in the transfer of virtual assets, such as Beneficiary, BeneficiaryVASP, Originator, and OriginatorVASP as per the IVMS101 message standard. For the Originator, OriginatingVASP information In 'Asset Transfer Authorization Response', copy the data of the request, and enter the Beneficiary and BeneficiaryVASP data.
