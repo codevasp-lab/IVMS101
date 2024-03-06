@@ -330,7 +330,7 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
             - **legalPersonName**: 법인명을 기입합니다.
             - **legalPersonNameIdentifierType**: `LEGL`(legal) 로 고정됩니다.
         - **customerIdentification**(Optional): 자산을 전송하는 송금인을 VASP에서 식별 가능한 식별자 (UID 또는 IDX)
-    - **accountNumber**(Required): 자산을 전송하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다.
+    - **accountNumber**(Required): 자산을 전송하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다. 검증 방법은 [지갑 주소 검증하기](https://code-docs-kr.readme.io/reference/%EC%A7%80%EA%B0%91-%EC%A3%BC%EC%86%8C-%EA%B2%80%EC%A6%9D%ED%95%98%EA%B8%B0) 페이지를 참조해 주세요.
   - **Beneficiary**(Required): 자산을 수신 받는 수취인(개인) 또는 법인 및 대표자에 대한 정보를 기입합니다. 요청(request)을 보낼 때, `Beneficiary` 정보를 함께 기입하여 보내야 하며, ①이름과 ②지갑 주소로 구성되어 있습니다. 지갑 주소 정보는 필수입니다. 이름 정보는 `tradePrice`가 트래블룰 적용 기준을 초과할 경우, 필수로 설정해야하고, 초과하지 않을 경우 옵션입니다.
   ※ 이름 정보는 `isExceedingThreshold`가 true일 때 Required, `isExceedingThreshold`가 false일 때 Optional입니다.
     - **beneficiaryPersons**(Required): `Beneficiary` 상위 객체에는 반드시 `beneficiaryPersons`라는 하위 객체가 포함되어야 합니다. `beneficiaryPersons`는 `originatorPersons`와 구조가 동일합니다. `beneficiaryPersons` 하위에는 `naturalPerson` 또는 `legalPerson`로 나눌 수 있습니다. 수취 VASP는 입력한 이름과 실제 수취인의 이름을 비교했을 때, 이름이 다를 경우 거절(denied) 응답을 보냅니다.
@@ -362,6 +362,6 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
     - **beneficiaryPersons**(Required): 상위 객체인 `Beneficiary` 객체에 반드시 포함되어야 하며 구조는 `originatorPersons` 와 같으므로 요청의 `originatorPersons` 설명을 참고해 주세요.
       - **naturalPerson**(Required): 개인에 대한 정보를 설정하기 위한 객체로 `name`(이름) 정보를 필수로 설정해야 합니다.
       - **legalPerson**(Optional): 법인에 대한 정보를 설정하기 위한 객체로 `name`(이름) 정보를 필수로 설정해야 합니다.
-    - **accountNumber**(Required): 자산을 수신하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다.
+    - **accountNumber**(Required): 자산을 수신하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다. 검증 방법은 [지갑 주소 검증하기](https://code-docs-kr.readme.io/reference/%EC%A7%80%EA%B0%91-%EC%A3%BC%EC%86%8C-%EA%B2%80%EC%A6%9D%ED%95%98%EA%B8%B0) 페이지를 참조해 주세요.
 - **OriginatingVASP**(Required): 자산을 전송하려는 송신 VASP 정보로 요청의 값을 그대로 복사해서 사용합니다.
 - **BeneficiaryVASP**(Required): 자산을 수신하는 수취 VASP 정보입니다. 구조는 `OriginatingVASP` 와 같으므로 요청의 `OriginatingVASP` 설명을 참고해 주세요.
