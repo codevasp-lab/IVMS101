@@ -310,58 +310,58 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
 * CODE는 회원사들을 위해 K-LEI 발급 수수료 면제 프로그램을 제공합니다. 자세한 정보는 홈페이지를 방문해 주세요. [https://www.codevasp.com/ko/page-lei](https://www.codevasp.com/ko/page-lei)
 
 ### 자산 이전 허가 요청 IVMS101 Request
-- ivms101(Required): IVMS101 메시지 표준을 따르는 송금인(Originator), 수취인(Beneficiary), 송신 VASP(OriginatorVASP), 수취VASP(BeneficiaryVASP) 등 가상자산 이전에 관여하는 각 주체를 IVMS101 국제 표준에 맞춰서 정의한 객체입니다. '자산 이전 허가 요청' 에서는 Originator 의 이름과 자산 주소, Beneficiary 의 자산 주소, OriginatingVASP 정보가 반드시 포함돼야 하고, Beneficiary 이름은 선택 사항입니다.
-  - Originator(Required): 자산을 이전하고자 하는 송금인(개인) 또는 법인 및 대표자에 대한 정보.
-    - originatorPersons(Required): naturalPerson(개인), legalPerson(법인) 두 종류의 객체가 있으며, 법인의 경우에는 legalPerson(법인)과 naturalPerson(대표) 정보를 모두 설정해야 합니다. 배열 객체이며, 배열의 각 요소(element)는 naturalPerson 또는 legalPerson 중 하나 만을 정의해야 합니다. 자세한 내용은 본 매뉴얼 위쪽의 IVMS101 표준 항목을 참고해주세요.
-      - naturalPerson(Required): 개인에 대한 정보를 설정하기 위한 객체로 name(이름) 정보를 필수로 설정해야 합니다.
-        - name(Required):
-          - nameIdentifier: 법적 성명을 기입합니다. 국내 VASP 끼리 거래하는 경우는 한글로 기입하고, 해외 VASP 와 거래하는 경우 영문으로 기입합니다. IVMS101 표준 항목을 참고해 주세요.
-            - primaryIdentifier: 성명 중 성을 기입합니다. 분리할 수 없는 경우는 성과 이름을 순서대로 함께 표기합니다.
-            - secondaryIdentifier: 성명 중 이름을 기입합니다. 성과 이름을 분리할 수 없는 경우는 생략합니다.
-            - nameIdentifierType: `LEGL`(legal) 로 고정됩니다.
-          - localNameIdentifier: 해외 VASP 와 거래하는 경우 한글 이름을 추가로 전달하기 위해 정의합니다.
-            - primaryIdentifier: 한글 표기 성명 중 성을 기입합니다. 분리할 수 없는 경우 성과 이름을 순서대로 함께 표기합니다.
-            - secondaryIdentifier: 한글 표기 성명 중 이름을 기입합니다. 분리할 수 없는 경우는 생략합니다.
-            - nameIdentifierType: `LEGL`(legal) 로 고정됩니다.
-        - customerIdentification(Optional): 자산을 전송하는 송금인을 VASP에서 식별 가능한 식별자 (UID 또는 IDX)
-      - legalPerson(Optional): 법인에 대한 정보를 설정하기 위한 객체로 name 객체를 필수로 설정해야 합니다.
-        - name(Required):
-          - nameIdentifier: 법인의 등록 상 명칭을 기입합니다. 국내 VASP 끼리 거래하는 경우는 한글 또는 영문으로 기입하고, 해외 VASP 와 거래하는 경우 영문으로 기입합니다.
-            - legalPersonName: 법인명을 기입합니다.
-            - legalPersonNameIdentifierType: `LEGL`(legal) 로 고정됩니다.
-        - customerIdentification(Optional): 자산을 전송하는 송금인을 VASP에서 식별 가능한 식별자 (UID 또는 IDX)
-    - accountNumber(Required): 자산을 전송하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다.
-  - Beneficiary(Required): 자산을 수신 받는 수취인(개인) 또는 법인 및 대표자에 대한 정보를 기입합니다. 요청(request)을 보낼 때, Beneficiary 정보를 함께 기입하여 보내야 하며, ①이름과 ②지갑 주소로 구성되어 있습니다. 지갑 주소 정보는 필수입니다. 이름 정보는 tradePrice가 트래블룰 적용 기준을 초과할 경우, 필수로 설정해야하고, 초과하지 않을 경우 옵션입니다.
+- **ivms101**(Required): IVMS101 메시지 표준을 따르는 송금인(`Originator`), 수취인(`Beneficiary`), 송신 VASP(`OriginatorVASP`), 수취VASP(`BeneficiaryVASP`) 등 가상자산 이전에 관여하는 각 주체를 IVMS101 국제 표준에 맞춰서 정의한 객체입니다. '**자산 이전 허가 요청**' 에서는 `Originator` 의 이름과 자산 주소, `Beneficiary` 의 자산 주소, `OriginatingVASP` 정보가 반드시 포함돼야 하고, `Beneficiary` 이름은 선택 사항입니다.
+  - **Originator**(Required): 자산을 이전하고자 하는 송금인(개인) 또는 법인 및 대표자에 대한 정보.
+    - **originatorPersons**(Required): `naturalPerson`(개인), `legalPerson`(법인) 두 종류의 객체가 있으며, 법인의 경우에는 `legalPerson`(법인)과 `naturalPerson`(대표자) 정보를 모두 설정해야 합니다. 배열 객체이며, 배열의 각 요소(element)는 `naturalPerson` 또는 `legalPerson` 중 하나 만을 정의해야 합니다. 자세한 내용은 [IVMS101 표준](https://code-docs-kr.readme.io/reference/ivms101-%ED%91%9C%EC%A4%80) 항목을 참고해주세요.
+      - **naturalPerson**(Required): 개인에 대한 정보를 설정하기 위한 객체로 `name`(이름) 정보를 필수로 설정해야 합니다.
+        - **name**(Required):
+          - **nameIdentifier**: 법적 성명을 기입합니다. 국내 VASP 끼리 거래하는 경우는 한글로 기입하고, 해외 VASP 와 거래하는 경우 영문으로 기입합니다. [IVMS101 표준](https://code-docs-kr.readme.io/reference/ivms101-%ED%91%9C%EC%A4%80) 항목을 참고해 주세요.
+            - **primaryIdentifier**: 성명 중 성을 기입합니다. 분리할 수 없는 경우는 성과 이름을 순서대로 함께 표기합니다.
+            - **secondaryIdentifier**: 성명 중 이름을 기입합니다. 성과 이름을 분리할 수 없는 경우는 생략합니다.
+            - **nameIdentifierType**: `LEGL`(legal) 로 고정됩니다.
+          - **localNameIdentifier**: 해외 VASP 와 거래하는 경우 한글 이름을 추가로 전달하기 위해 정의합니다.
+            - **primaryIdentifier**: 한글 표기 성명 중 성을 기입합니다. 분리할 수 없는 경우 성과 이름을 순서대로 함께 표기합니다.
+            - **secondaryIdentifier**: 한글 표기 성명 중 이름을 기입합니다. 분리할 수 없는 경우는 생략합니다.
+            - **nameIdentifierType**: `LEGL`(legal) 로 고정됩니다.
+        - **customerIdentification**(Optional): 자산을 전송하는 송금인을 VASP에서 식별 가능한 식별자 (UID 또는 IDX)
+      - **legalPerson**(Optional): 법인에 대한 정보를 설정하기 위한 객체로 `name` 객체를 필수로 설정해야 합니다.
+        - **name**(Required):
+          - **nameIdentifier**: 법인의 등록 상 명칭을 기입합니다. 국내 VASP 끼리 거래하는 경우는 한글 또는 영문으로 기입하고, 해외 VASP 와 거래하는 경우 영문으로 기입합니다.
+            - **legalPersonName**: 법인명을 기입합니다.
+            - **legalPersonNameIdentifierType**: `LEGL`(legal) 로 고정됩니다.
+        - **customerIdentification**(Optional): 자산을 전송하는 송금인을 VASP에서 식별 가능한 식별자 (UID 또는 IDX)
+    - **accountNumber**(Required): 자산을 전송하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다.
+  - **Beneficiary**(Required): 자산을 수신 받는 수취인(개인) 또는 법인 및 대표자에 대한 정보를 기입합니다. 요청(request)을 보낼 때, `Beneficiary` 정보를 함께 기입하여 보내야 하며, ①이름과 ②지갑 주소로 구성되어 있습니다. 지갑 주소 정보는 필수입니다. 이름 정보는 `tradePrice`가 트래블룰 적용 기준을 초과할 경우, 필수로 설정해야하고, 초과하지 않을 경우 옵션입니다.
   ※ 이름 정보는 `isExceedingThreshold`가 true일 때 Required, `isExceedingThreshold`가 false일 때 Optional입니다.
-    - beneficiaryPersons(Required): Beneficiary 상위 객체에는 반드시 beneficiaryPersons라는 하위 객체가 포함되어야 합니다. beneficiaryPersons는 originatorPersons와 구조가 동일합니다. beneficiaryPersons 하위에는 naturalPerson 또는 legalPerson로 나눌 수 있습니다. 수취 VASP는 입력한 이름과 실제 수취인의 이름을 비교했을 때, 이름이 다를 경우 거절(denied) 응답을 보냅니다.
-      - naturalPerson(Required or Optional): 개인에 대한 정보를 설정하기 위한 객체이며, `isExceedingThreshold`가 true일 경우 Required, `isExceedingThreshold`가 false일 경우 Optional입니다.
-      - legalPerson(Required or Optional): 법인에 대한 정보를 설정하기 위한 객체이며, `isExceedingThreshold`가 true일 경우 Required, `isExceedingThreshold`가 false일 경우 Optional입니다.
-    - accountNumber(Required): 자산을 수신하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다.
-  - OriginatingVASP(Required): 자산을 전송하려는 송신 VASP 정보입니다.
-    - originatingVASP(Required):
-      - legalPerson(Required): 자산을 전송하려는 VASP의 법인 정보입니다.
-        - name(Required):
-          - nameIdentifier: 국제 표기법을 따르는 영문 이름 정보입니다.
-            - legalPersonName: 영문 법인명입니다.
-            - legalPersonNameIdentifierType: `LEGL`(legal) 로 고정됩니다.
-        - geographicAddress(Optional): 법인의 등록 서류상 소재지입니다. 법인 주소 또는 법인 등록 번호 중 하나는 반드시 입력해야 합니다.
-          - addressType: `GEOG` 로 입력합니다.
-          - townName: 시/도 이름을 입력합니다.
-          - addressLine: townName 하위 주소를 문자열의 배열 형식으로 입력합니다.
-          - country: ISO-3166-1 alpha-2 에서 정하는 2글자 국가 코드입니다. 예) KR, JP, US 등
-        - nationalIdentification(Optional): 국가의 인증을 받은 법인 식별 번호, 즉 사업자등록번호 입니다. 법인 주소 또는 등록 번호 중 하나는 반드시 입력해야 합니다.
-          - nationalIdentifier: 사업자등록번호
-          - nationalIdentifierType: `RAID`(Registration authority identifier)
-          - registrationAuthority: `RA000657` (대한민국 국세청 RA 식별번호)
-        - countryOfRegistration(Required): 등록 국가. ISO-3166-1 alpha-2 에서 정하는 2글자 국가 코드입니다. 예) KR, JP, US 등
+    - **beneficiaryPersons**(Required): `Beneficiary` 상위 객체에는 반드시 `beneficiaryPersons`라는 하위 객체가 포함되어야 합니다. `beneficiaryPersons`는 `originatorPersons`와 구조가 동일합니다. `beneficiaryPersons` 하위에는 `naturalPerson` 또는 `legalPerson`로 나눌 수 있습니다. 수취 VASP는 입력한 이름과 실제 수취인의 이름을 비교했을 때, 이름이 다를 경우 거절(denied) 응답을 보냅니다.
+      - **naturalPerson**(Required or Optional): 개인에 대한 정보를 설정하기 위한 객체이며, `isExceedingThreshold`가 true일 경우 Required, `isExceedingThreshold`가 false일 경우 Optional입니다.
+      - **legalPerson**(Required or Optional): 법인에 대한 정보를 설정하기 위한 객체이며, `isExceedingThreshold`가 true일 경우 Required, `isExceedingThreshold`가 false일 경우 Optional입니다.
+    - **accountNumber**(Required): 자산을 수신하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다.
+  - **OriginatingVASP**(Required): 자산을 전송하려는 송신 VASP 정보입니다.
+    - **originatingVASP**(Required):
+      - **legalPerson**(Required): 자산을 전송하려는 VASP의 법인 정보입니다.
+        - **name**(Required):
+          - **nameIdentifier**: 국제 표기법을 따르는 영문 이름 정보입니다.
+            - **legalPersonName**: 영문 법인명입니다.
+            - **legalPersonNameIdentifierType**: `LEGL`(legal) 로 고정됩니다.
+        - **geographicAddress**(Optional): 법인의 등록 서류상 소재지입니다. 법인 주소 또는 법인 등록 번호 중 하나는 반드시 입력해야 합니다.
+          - **addressType**: `GEOG` 로 입력합니다.
+          - **townName**: 시/도 이름을 입력합니다.
+          - **addressLine**: townName 하위 주소를 문자열의 배열 형식으로 입력합니다.
+          - **country**: ISO-3166-1 alpha-2 에서 정하는 2글자 국가 코드입니다. 예) `KR`, `JP`, `US` 등
+        - **nationalIdentification**(Optional): 국가의 인증을 받은 법인 식별 번호, 즉 사업자등록번호 입니다. 법인 주소 또는 등록 번호 중 하나는 반드시 입력해야 합니다.
+          - **nationalIdentifier**: 사업자등록번호
+          - **nationalIdentifierType**: `RAID`(Registration authority identifier)
+          - **registrationAuthority**: `RA000657` (대한민국 국세청 RA 식별번호)
+        - **countryOfRegistration**(Required): 등록 국가. ISO-3166-1 alpha-2 에서 정하는 2글자 국가 코드입니다. 예) `KR`, `JP`, `US` 등
 
 ### 자산 이전 허가 요청 IVMS101 Response
-- ivms101(Required): IVMS101 메시지 표준을 따르는 송금인(Originator), 수취인(Beneficiary), 송신 VASP(OriginatorVASP), 수취 VASP(BeneficiaryVASP) 등 가상자산 이전에 관여하는 각 주체를 IVMS101 국제 표준에 맞춰 정의한 객체입니다. 응답(response) 객체에서는 Originator, OriginatingVASP 정보는 요청(request)의 데이터를 복사하고, Beneficiary, BeneficiaryVASP 데이터가 추가됩니다.
-  - Originator(Required): 자산을 전송하고자 하는 송금인(개인) 또는 법인 및 대표자에 대한 정보입니다. 요청의 값을 그대로 복사해서 사용합니다.
-  - Beneficiary(Required): 자산을 수신하는 수취인(개인) 또는 법인 및 대표자에 대한 정보입니다. 응답(response)에서는 이름과 자산 주소를 기입해서 보내야 합니다.
-    - beneficiaryPersons(Required): 상위 객체인 Beneficiary 객체에 반드시 포함되어야 하며 구조는 `originatorPersons` 와 같으므로 요청의 `originatorPersons` 설명을 참고해 주세요.
-      - naturalPerson(Required): 개인에 대한 정보를 설정하기 위한 객체로 name(이름) 정보를 필수로 설정해야 합니다.
-      - legalPerson(Optional): 법인에 대한 정보를 설정하기 위한 객체로 name(이름) 정보를 필수로 설정해야 합니다.
-    - accountNumber(Required): 자산을 수신하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다.
-- OriginatingVASP(Required): 자산을 전송하려는 송신 VASP 정보로 요청의 값을 그대로 복사해서 사용합니다.
-- BeneficiaryVASP(Required): 자산을 수신하는 수취 VASP 정보입니다. 구조는 OriginatingVASP 와 같으므로 요청의 OriginatingVASP 설명을 참고해 주세요.
+- **ivms101**(Required): IVMS101 메시지 표준을 따르는 송금인(`Originator`), 수취인(`Beneficiary`), 송신 VASP(`OriginatorVASP`), 수취 VASP(`BeneficiaryVASP`) 등 가상자산 이전에 관여하는 각 주체를 IVMS101 국제 표준에 맞춰 정의한 객체입니다. 응답(response) 객체에서는 `Originator`, `OriginatingVASP` 정보는 요청(request)의 데이터를 복사하고, `Beneficiary`, `BeneficiaryVASP` 데이터가 추가됩니다.
+  - **Originator**(Required): 자산을 전송하고자 하는 송금인(개인) 또는 법인 및 대표자에 대한 정보입니다. 요청의 값을 그대로 복사해서 사용합니다.
+  - **Beneficiary**(Required): 자산을 수신하는 수취인(개인) 또는 법인 및 대표자에 대한 정보입니다. 응답(response)에서는 이름과 자산 주소를 기입해서 보내야 합니다.
+    - **beneficiaryPersons**(Required): 상위 객체인 `Beneficiary` 객체에 반드시 포함되어야 하며 구조는 `originatorPersons` 와 같으므로 요청의 `originatorPersons` 설명을 참고해 주세요.
+      - **naturalPerson**(Required): 개인에 대한 정보를 설정하기 위한 객체로 `name`(이름) 정보를 필수로 설정해야 합니다.
+      - **legalPerson**(Optional): 법인에 대한 정보를 설정하기 위한 객체로 `name`(이름) 정보를 필수로 설정해야 합니다.
+    - **accountNumber**(Required): 자산을 수신하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다.
+- **OriginatingVASP**(Required): 자산을 전송하려는 송신 VASP 정보로 요청의 값을 그대로 복사해서 사용합니다.
+- **BeneficiaryVASP**(Required): 자산을 수신하는 수취 VASP 정보입니다. 구조는 `OriginatingVASP` 와 같으므로 요청의 `OriginatingVASP` 설명을 참고해 주세요.
