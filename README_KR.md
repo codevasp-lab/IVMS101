@@ -5,7 +5,7 @@ CODE 는 가상 자산 거래와 관련한 개인정보를 교환하기 위해 I
 - 모든 필드의 값(Value)는 별도로 명시된 내용이 없으면 대소문자를 구분하지 않습니다.
 - 모든 필드의 값(Value)는 항상 UTF-8 인코딩된 문자열로 표현합니다. (boolean 이나 정수, 실수 등 포함)
 - 모든 필드의 값(Value)는 한글이 허용되는 경우를 제외하면 영어 표기를 원칙으로 합니다.
-- CODE 프로토콜의 IVMS101 규칙은 [여기](https://docs.codevasp.com/api-reference/ivms101)에서 더 자세히 볼 수 있습니다..
+- CODE 프로토콜의 IVMS101 규칙은 [여기](https://code-docs-kr.readme.io/reference/ivms101-%ED%91%9C%EC%A4%80)에서 더 자세히 볼 수 있습니다..
 - 개인 회원 간 전송의 예제는 complete-example.json 파일을 참고하세요.
 - 법인 회원 간 전송의 예제는 complete-example-legal-person.json 파일을 참고하세요.
 - 전체 json 스키마는 json-schema.json 파일에 있습니다.

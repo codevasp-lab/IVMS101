@@ -5,7 +5,7 @@ CODE uses the IVMS101 standard to exchange personal information related to virtu
 - The values of all fields are not case-sensitive unless otherwise specified.
 - The values of all fields are always expressed with a UTF-8 encoded string. (including boolean, integer, real number, etc.)
 - In principle, the values of all fields shall be written in English except when Local Language is permitted.
-- You may find more information about the IVMS101 rule for CODE protocol [here](https://codevasp.gitbook.io/code-api-doc-en/api-reference/ivms101).
+- You may find more information about the IVMS101 rule for CODE protocol [here](https://code-docs-en.readme.io/reference/ivms101-standard).
 - Please refer to complete natual person example json in complete-example.json file.
 - Please refer to complete legal person example json in complete-example-legal-person.json file.
 - Complete json schema is provided in json-schema.json file.
