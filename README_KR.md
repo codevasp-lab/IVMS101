@@ -363,5 +363,5 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
       - **naturalPerson**(Required): 개인에 대한 정보를 설정하기 위한 객체로 `name`(이름) 정보를 필수로 설정해야 합니다.
       - **legalPerson**(Optional): 법인에 대한 정보를 설정하기 위한 객체로 `name`(이름) 정보를 필수로 설정해야 합니다.
     - **accountNumber**(Required): 자산을 수신하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다. 검증 방법은 [지갑 주소 검증하기](https://code-docs-kr.readme.io/reference/%EC%A7%80%EA%B0%91-%EC%A3%BC%EC%86%8C-%EA%B2%80%EC%A6%9D%ED%95%98%EA%B8%B0) 페이지를 참조해 주세요.
-- **OriginatingVASP**(Required): 자산을 전송하려는 송신 VASP 정보로 요청의 값을 그대로 복사해서 사용합니다.
-- **BeneficiaryVASP**(Required): 자산을 수신하는 수취 VASP 정보입니다. 구조는 `OriginatingVASP` 와 같으므로 요청의 `OriginatingVASP` 설명을 참고해 주세요.
+  - **OriginatingVASP**(Required): 자산을 전송하려는 송신 VASP 정보로 요청의 값을 그대로 복사해서 사용합니다.
+  - **BeneficiaryVASP**(Required): 자산을 수신하는 수취 VASP 정보입니다. 구조는 `OriginatingVASP` 와 같으므로 요청의 `OriginatingVASP` 설명을 참고해 주세요.
