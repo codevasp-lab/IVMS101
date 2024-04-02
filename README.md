@@ -352,7 +352,7 @@ You may also include more Beneficiary information in Beneficiary Object such as 
         - **nationalIdentification**(Optional): This is a legal person identification number which has been certified by the country i.e.a business registration number. You shall enter either the legal person's address or registration number.
           - **nationalIdentifier**: Business registration number
           - **nationalIdentifierType**: `RAID`(Registration authority identifier)
-          - **registrationAuthority**: 8 digit code. Please refer to [Registration Authority Section](https://code-docs-en.readme.io/reference/ivms101-type#registrationauthority)
+          - **registrationAuthority**: 8 digits code. Please refer to [Registration Authority Section](https://code-docs-en.readme.io/reference/ivms101-type#registrationauthority)
         - **countryOfRegistration**(Required): country of registration. This is a two-letter country code determined by ISO-3166-1 alpha-2. e.g.) `KR`, `JP`, `US`, etc.
 
 ### Asset Transfer Authorization IVMS101 Response
