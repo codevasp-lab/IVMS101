@@ -158,7 +158,7 @@ Originator VASP 로서 Beneficiary VASP의 요청에 `Originator` 및 `Originato
           - **registrationAuthority**: `RA000657` (대한민국 국세청 RA 식별번호)
         - **countryOfRegistration**(Required): 등록 국가. ISO-3166-1 alpha-2 에서 정하는 2글자 국가 코드입니다. 예) `KR`, `JP`, `US` 등
 
-### 자산 이전 허가 요청 IVMS101 Response
+### 자산 이전 데이터 요청 IVMS101 Response
 - **ivms101**(Required): 응답(response) 객체에서는 `Originator`, `OriginatingVASP` 정보는 TXID로 부터 찾은 데이터로 객체를 생성하고, `Beneficiary`, `BeneficiaryVASP` 데이터는 요청의 객체를 그대로 사용합니다.
   - **Originator**(Required): 송금인(개인) 또는 법인 및 대표자에 대한 정보.
     - **originatorPersons**(Required): `naturalPerson`(개인), `legalPerson`(법인) 두 종류의 객체가 있으며, 법인의 경우에는 `legalPerson`(법인)과 `naturalPerson`(대표자) 정보를 모두 설정해야 합니다. 배열 객체이며, 배열의 각 요소(element)는 `naturalPerson` 또는 `legalPerson` 중 하나 만을 정의해야 합니다. 자세한 내용은 [IVMS101 표준](https://code-docs-kr.readme.io/reference/ivms101-%ED%91%9C%EC%A4%80) 항목을 참고해주세요.
