@@ -98,7 +98,7 @@ You may also include more Beneficiary information in Beneficiary Object such as 
 
 ## Asset Transfer Data Request
 The asset transfer data request, in contrast to the asset transfer authorization request, is a method to obtain travel rule data from the counterparty when an anonymous deposit has occurred following an already executed on-chain transaction.
-### Initial IVMS101 from an Beneficiary VASP
+### Initial IVMS101 from a Beneficiary VASP
 As a Beneficiary VASP, the following object needs to be sent to the Originator VASP. The entityId of the Originator VASP is already known through the TXID lookup, but the information of the sender is unknown, so it is sent as follows.
 ```
 {
@@ -107,7 +107,7 @@ As a Beneficiary VASP, the following object needs to be sent to the Originator V
 }
 ```
 
-### Response IVMS101 from a Originator VASP
+### Response IVMS101 from an Originator VASP
 As the Originator VASP, you respond to the Beneficiary VASP's request by adding the `Originator` and `OriginatorVASP` objects.
 ```
 {
