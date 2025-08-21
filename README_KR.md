@@ -51,8 +51,10 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
             - **primaryIdentifier**: 한글 표기 성명 중 성을 기입합니다. 분리할 수 없는 경우 성과 이름을 순서대로 함께 표기합니다.
             - **secondaryIdentifier**: 한글 표기 성명 중 이름을 기입합니다. 분리할 수 없는 경우는 생략합니다.
             - **nameIdentifierType**: `LEGL`(legal) 로 고정됩니다.
+        - **dateAndPlaceOfBirth** (Required): 
+          - **dateOfBirth**: 생년월일을 `1990-01-01` 포맷으로 입력합니다.
         - **customerIdentification**(Optional): 자산을 전송하는 송금인을 VASP에서 식별 가능한 식별자 (UID 또는 IDX)
-      - **legalPerson**(Optional): 법인에 대한 정보를 설정하기 위한 객체로 `name` 객체를 필수로 설정해야 합니다.
+      - **legalPerson**(Optional): 법인에 대한 정보를 설정하기 위한 객체로 `name` 객체를 필수로 설정해야 합니다. 법인 트래블룰의 경우 legalPerson객체가 가장 위에 있어야 합니다.
         - **name**(Required):
           - **nameIdentifier**: 법인의 등록 상 명칭을 기입합니다. 국내 VASP 끼리 거래하는 경우는 한글 또는 영문으로 기입하고, 해외 VASP 와 거래하는 경우 영문으로 기입합니다.
             - **legalPersonName**: 법인명을 기입합니다.
