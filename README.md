@@ -51,6 +51,8 @@ You may also include more Beneficiary information in Beneficiary Object such as 
             - **primaryIdentifier**: Enter the last name in a local name separated by first name and last name. If they cannot be separated, enter the first name and last name together in order.
             - **secondaryIdentifier**: Enter the first name in a local name separated by first name and last name. If they cannot be separated, omit them.
             - **nameIdentifierType**: Fixed as `LEGL`(legal)
+        - **dateAndPlaceOfBirth** (Required): 
+          - **dateOfBirth**: Enter date of birth in `1990-01-01` format. 
         - **customerIdentification**(Optional): This is an identifier (UID or IDX), with which a VASP can identify an originator who transfers the assets
       - **legalPerson**(Optional): This is an object for setting information on an legal person, and the name object shall be set as required.
         - **name**(Required):
