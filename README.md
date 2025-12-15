@@ -5,7 +5,7 @@ CODE uses the IVMS101 standard to exchange personal information related to virtu
 - The values of all fields are not case-sensitive unless otherwise specified.
 - The values of all fields are always expressed with a UTF-8 encoded string. (including boolean, integer, real number, etc.)
 - In principle, the values of all fields shall be written in English except when Local Language is permitted.
-- You may find more information about the IVMS101 rule for CODE protocol [here](https://code-docs-en.readme.io/reference/ivms101-standard).
+- You may find more information about the IVMS101 rule for CODE protocol [here](https://alliances.codevasp.com/board/315).
 - Please refer to complete natual person example json in complete-example.json file.
 - Please refer to complete legal person example json in complete-example-legal-person.json file.
 - Complete json schema is provided in json-schema.json file.
@@ -40,10 +40,10 @@ You may also include more Beneficiary information in Beneficiary Object such as 
 ### Asset Transfer Authorization IVMS101 Request
 - **ivms101**(Required): This is an object defined according to the IVMS101 international standard for each subject involved in the transfer of virtual assets, such as `Beneficiary`, `BeneficiaryVASP`, `Originator`, and `OriginatorVASP` as per the IVMS101 message standard. The `Originator`s name, asset address, `Beneficiary`'s asset address, and `OriginatingVASP` information in the 'Asset Transfer Authorization Request' shall be included, and `Beneficiary` name is optional.
   - **Originator**(Required): Refers to the account holder who allows the Virtual Asset(VA) transfer from that account, the natural or legal person that places the order with the originating VASP to perform the VA transfer.
-    - **originatorPersons**(Required): There are two types of objects, `naturalPerson` (individual) and `legalPerson` (corporate), and for `legalPerson`, both `legalPerson` (corporation) and `naturalPerson` (representative) information shall be set. This is an array object, and an element of the array shall define either `naturalPerson` or `legalPerson`. For details, please refer to the [IVMS101 standard](https://code-docs-en.readme.io/reference/ivms101-standard) section.
+    - **originatorPersons**(Required): There are two types of objects, `naturalPerson` (individual) and `legalPerson` (corporate), and for `legalPerson`, both `legalPerson` (corporation) and `naturalPerson` (representative) information shall be set. This is an array object, and an element of the array shall define either `naturalPerson` or `legalPerson`. For details, please refer to the [IVMS101 standard](https://alliances.codevasp.com/board/315) section.
       - **naturalPerson**(Required): This is an object for setting information on a natural person, and the `name` information shall be set as required.
         - **name**(Required):
-          - **nameIdentifier**: Enter the legal name. If a transaction is made between VASPs in Korea, enter in Korean. If a transaction is made with VASPs outside Korea, enter in English. Please refer to the [IVMS101 standard](https://code-docs-en.readme.io/reference/ivms101-standard).
+          - **nameIdentifier**: Enter the legal name. If a transaction is made between VASPs in Korea, enter in Korean. If a transaction is made with VASPs outside Korea, enter in English. Please refer to the [IVMS101 standard](https://alliances.codevasp.com/board/315).
             - **primaryIdentifier**: If you cannot enter or separate the last name, enter the first name and last name together in order.
             - **secondaryIdentifier**: Enter the first name. If first name and last name cannot be separated, omit them.
             - **nameIdentifierType**: Fixed as `LEGL`(legal)
@@ -60,7 +60,7 @@ You may also include more Beneficiary information in Beneficiary Object such as 
             - **legalPersonName**: Legal person name
             - **legalPersonNameIdentifierType**: Fixed as `LEGL`(legal)
         - **customerIdentification**(Optional): This is a unique identifier (UID or IDX), with which a VASP can identify an originator who transfers the assets
-    - **accountNumber**(Required): This is a wallet address which transfers the assets. If tag or memo value is required, separate them with `:` and make one string. Please refer to [Verify Wallet Address](https://code-docs-en.readme.io/reference/verify-wallet-address).
+    - **accountNumber**(Required): This is a wallet address which transfers the assets. If tag or memo value is required, separate them with `:` and make one string. Please refer to [Verify Wallet Address](https://alliances.codevasp.com/board/316).
   - **Beneficiary**(Required): Fill in the information about the individual or legal entity and their representative who will receive the assets. When sending a request, you must include the `Beneficiary` information, which consists of the name and wallet address. The wallet address information is mandatory, the name information is optional if the `tradePrice` does not exceed the Travel Rule threshold, but required if it does. The name information is Required when `isExceedingThreshold` is true, and Optional when `isExceedingThreshold` is false. 
   ※ Considering the market volatility and global regulations, we recommend applying the Travel Rule to all transactions. In this case, set the `isExceedingThreshold` as False and enter the beneficiary's name.
     - **beneficiaryPersons**(Required): The `Beneficiary` object must include a sub-object called `beneficiaryPersons`. The structure of `beneficiaryPersons` is the same as `originatorPersons`. It can be divided into `naturalPerson` or `legalPerson`. When comparing the name entered with the actual name of the recipient, if the names do not match, the receiving VASP sends a denied response.
@@ -82,7 +82,7 @@ You may also include more Beneficiary information in Beneficiary Object such as 
         - **nationalIdentification**(Optional): This is a legal person identification number which has been certified by the country i.e.a business registration number. You shall enter either the legal person's address or registration number.
           - **nationalIdentifier**: Business registration number
           - **nationalIdentifierType**: `RAID`(Registration authority identifier)
-          - **registrationAuthority**: 8 digits code. Please refer to [Registration Authority Section](https://code-docs-en.readme.io/reference/ivms101-type#registrationauthority)
+          - **registrationAuthority**: 8 digits code. Please refer to [Registration Authority Section](https://alliances.codevasp.com/board/315)
         - **countryOfRegistration**(Required): country of registration. This is a two-letter country code determined by ISO-3166-1 alpha-2. e.g.) `KR`, `JP`, `US`, etc.
 
 ### Asset Transfer Authorization IVMS101 Response
@@ -92,7 +92,7 @@ You may also include more Beneficiary information in Beneficiary Object such as 
     - **beneficiaryPersons**(Required): This shall be included in the `Beneficiary` object, which is the parent object, and since the structure is the same as `originatorPersons`, please refer to the `originatorPersons` description in the request.
       - **naturalPerson**(Required): This is an object for setting information on an individual, and the `name` information shall be set as required.
       - **legalPerson**(Optional): This is an object for setting information on a legal person, and the `name` information shall be set as required.
-    - **accountNumber**(Required): This is a wallet address which transfers the assets. If tag or memo value is required, separate them with `:` and make one string. Please refer to [Verify Wallet Address](https://code-docs-en.readme.io/reference/verify-wallet-address).
+    - **accountNumber**(Required): This is a wallet address which transfers the assets. If tag or memo value is required, separate them with `:` and make one string. Please refer to [Verify Wallet Address](https://alliances.codevasp.com/board/316).
   - **OriginatingVASP**(Required): Copy and use the value of the request as the information on the originating VASP to which you want to transfer the asset.
   - **BeneficiaryVASP**(Required): This is the information on a beneficiary's VASP to which assets are transferred. Since the structure is the same as `OriginatingVASP`, please refer to the `OriginatingVASP` description in the request.
 
@@ -126,7 +126,7 @@ As the Originator VASP, you respond to the Beneficiary VASP's request by adding 
     - **beneficiaryPersons**(Required): There are two types of objects: `naturalPerson` (individual) and `legalPerson` (corporation). In the case of a corporation, you need to set both `legalPerson` (corporation) and `naturalPerson` (representative) information. It is an array object, and each element of the array must define either `naturalPerson` or `legalPerson`.
       - **naturalPerson**(Required): This is an object for setting information on a natural person, and the `name` information shall be set as required.
         - **name**(Required):
-          - **nameIdentifier**: Enter the legal name. If a transaction is made between VASPs in Korea, enter in Korean. If a transaction is made with VASPs outside Korea, enter in English. Please refer to the [IVMS101 standard](https://code-docs-en.readme.io/reference/ivms101-standard).
+          - **nameIdentifier**: Enter the legal name. If a transaction is made between VASPs in Korea, enter in Korean. If a transaction is made with VASPs outside Korea, enter in English. Please refer to the [IVMS101 standard](https://alliances.codevasp.com/board/315).
             - **primaryIdentifier**: If you cannot enter or separate the last name, enter the first name and last name together in order.
             - **secondaryIdentifier**: Enter the first name. If first name and last name cannot be separated, omit them.
             - **nameIdentifierType**: Fixed as `LEGL`(legal)
@@ -157,16 +157,16 @@ As the Originator VASP, you respond to the Beneficiary VASP's request by adding 
         - **nationalIdentification**(Optional): This is a legal person identification number which has been certified by the country i.e.a business registration number. You shall enter either the legal person's address or registration number.
           - **nationalIdentifier**: Business registration number
           - **nationalIdentifierType**: `RAID`(Registration authority identifier)
-          - **registrationAuthority**: 8 digits code. Please refer to [Registration Authority Section](https://code-docs-en.readme.io/reference/ivms101-type#registrationauthority)
+          - **registrationAuthority**: 8 digits code. Please refer to [Registration Authority Section](https://alliances.codevasp.com/board/315)
         - **countryOfRegistration**(Required): country of registration. This is a two-letter country code determined by ISO-3166-1 alpha-2. e.g.) `KR`, `JP`, `US`, etc.
 
 ### Asset Transfer Data Request IVMS101 Response
 - **ivms101**(Required): In the response object, the `Originator` and `OriginatingVASP` information is created from the data found through the TXID. The `Beneficiary` and `BeneficiaryVASP` data are used as they are from the request object.
   - **Originator**(Required): Refers to the account holder who allows the Virtual Asset(VA) transfer from that account, the natural or legal person that places the order with the originating VASP to perform the VA transfer.
-    - **originatorPersons**(Required): There are two types of objects, `naturalPerson` (individual) and `legalPerson` (corporate), and for `legalPerson`, both `legalPerson` (corporation) and `naturalPerson` (representative) information shall be set. This is an array object, and an element of the array shall define either `naturalPerson` or `legalPerson`. For details, please refer to the [IVMS101 standard](https://code-docs-en.readme.io/reference/ivms101-standard) section.
+    - **originatorPersons**(Required): There are two types of objects, `naturalPerson` (individual) and `legalPerson` (corporate), and for `legalPerson`, both `legalPerson` (corporation) and `naturalPerson` (representative) information shall be set. This is an array object, and an element of the array shall define either `naturalPerson` or `legalPerson`. For details, please refer to the [IVMS101 standard](https://alliances.codevasp.com/board/315) section.
       - **naturalPerson**(Required): This is an object for setting information on a natural person, and the `name` information shall be set as required.
         - **name**(Required):
-          - **nameIdentifier**: Enter the legal name. If a transaction is made between VASPs in Korea, enter in Korean. If a transaction is made with VASPs outside Korea, enter in English. Please refer to the [IVMS101 standard](https://code-docs-en.readme.io/reference/ivms101-standard).
+          - **nameIdentifier**: Enter the legal name. If a transaction is made between VASPs in Korea, enter in Korean. If a transaction is made with VASPs outside Korea, enter in English. Please refer to the [IVMS101 standard](https://alliances.codevasp.com/board/315).
             - **primaryIdentifier**: If you cannot enter or separate the last name, enter the first name and last name together in order.
             - **secondaryIdentifier**: Enter the first name. If first name and last name cannot be separated, omit them.
             - **nameIdentifierType**: Fixed as `LEGL`(legal)
@@ -197,7 +197,7 @@ As the Originator VASP, you respond to the Beneficiary VASP's request by adding 
         - **nationalIdentification**(Optional): This is a legal person identification number which has been certified by the country i.e.a business registration number. You shall enter either the legal person's address or registration number.
           - **nationalIdentifier**: Business registration number
           - **nationalIdentifierType**: `RAID`(Registration authority identifier)
-          - **registrationAuthority**: 8 digits code. Please refer to [Registration Authority Section](https://code-docs-en.readme.io/reference/ivms101-type#registrationauthority)
+          - **registrationAuthority**: 8 digits code. Please refer to [Registration Authority Section](https://alliances.codevasp.com/board/315)
         - **countryOfRegistration**(Required): country of registration. This is a two-letter country code determined by ISO-3166-1 alpha-2. e.g.) `KR`, `JP`, `US`, etc.
   - **Beneficiary**(Required): Information of the recipient who received the assets. The object from the request are copied and used as they are.
   - **BeneficiaryVASP**(Required): Information of the VASP that received the assets. The object from the request are copied and used as they are.
