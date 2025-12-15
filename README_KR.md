@@ -5,7 +5,7 @@ CODE 는 가상 자산 거래와 관련한 개인정보를 교환하기 위해 I
 - 모든 필드의 값(Value)는 별도로 명시된 내용이 없으면 대소문자를 구분하지 않습니다.
 - 모든 필드의 값(Value)는 항상 UTF-8 인코딩된 문자열로 표현합니다. (boolean 이나 정수, 실수 등 포함)
 - 모든 필드의 값(Value)는 한글이 허용되는 경우를 제외하면 영어 표기를 원칙으로 합니다.
-- CODE 프로토콜의 IVMS101 규칙은 [여기](https://code-docs-kr.readme.io/reference/ivms101-%ED%91%9C%EC%A4%80)에서 더 자세히 볼 수 있습니다..
+- CODE 프로토콜의 IVMS101 규칙은 [여기](https://alliances.codevasp.com/board/296)에서 더 자세히 볼 수 있습니다.
 - 개인 회원 간 전송의 예제는 complete-example.json 파일을 참고하세요.
 - 법인 회원 간 전송의 예제는 complete-example-legal-person.json 파일을 참고하세요.
 - 전체 json 스키마는 json-schema.json 파일에 있습니다.
@@ -40,10 +40,10 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
 ### 자산 이전 허가 요청 IVMS101 Request
 - **ivms101**(Required): IVMS101 메시지 표준을 따르는 송금인(`Originator`), 수취인(`Beneficiary`), 송신 VASP(`OriginatorVASP`), 수취VASP(`BeneficiaryVASP`) 등 가상자산 이전에 관여하는 각 주체를 IVMS101 국제 표준에 맞춰서 정의한 객체입니다. '**자산 이전 허가 요청**' 에서는 `Originator` 의 이름과 자산 주소, `Beneficiary` 의 자산 주소, `OriginatingVASP` 정보가 반드시 포함돼야 하고, `Beneficiary` 이름은 선택 사항입니다.
   - **Originator**(Required): 자산을 이전하고자 하는 송금인(개인) 또는 법인 및 대표자에 대한 정보.
-    - **originatorPersons**(Required): `naturalPerson`(개인), `legalPerson`(법인) 두 종류의 객체가 있으며, 법인의 경우에는 `legalPerson`(법인)과 `naturalPerson`(대표자) 정보를 모두 설정해야 합니다. 배열 객체이며, 배열의 각 요소(element)는 `naturalPerson` 또는 `legalPerson` 중 하나 만을 정의해야 합니다. 자세한 내용은 [IVMS101 표준](https://code-docs-kr.readme.io/reference/ivms101-%ED%91%9C%EC%A4%80) 항목을 참고해주세요.
+    - **originatorPersons**(Required): `naturalPerson`(개인), `legalPerson`(법인) 두 종류의 객체가 있으며, 법인의 경우에는 `legalPerson`(법인)과 `naturalPerson`(대표자) 정보를 모두 설정해야 합니다. 배열 객체이며, 배열의 각 요소(element)는 `naturalPerson` 또는 `legalPerson` 중 하나 만을 정의해야 합니다. 자세한 내용은 [IVMS101 표준](https://alliances.codevasp.com/board/296) 항목을 참고해주세요.
       - **naturalPerson**(Required): 개인에 대한 정보를 설정하기 위한 객체로 `name`(이름) 정보를 필수로 설정해야 합니다.
         - **name**(Required):
-          - **nameIdentifier**: 법적 성명을 기입합니다. 국내 VASP 끼리 거래하는 경우는 한글로 기입하고, 해외 VASP 와 거래하는 경우 영문으로 기입합니다. [IVMS101 표준](https://code-docs-kr.readme.io/reference/ivms101-%ED%91%9C%EC%A4%80) 항목을 참고해 주세요.
+          - **nameIdentifier**: 법적 성명을 기입합니다. 국내 VASP 끼리 거래하는 경우는 한글로 기입하고, 해외 VASP 와 거래하는 경우 영문으로 기입합니다. [IVMS101 표준](https://alliances.codevasp.com/board/296) 항목을 참고해 주세요.
             - **primaryIdentifier**: 성명 중 성을 기입합니다. 분리할 수 없는 경우는 성과 이름을 순서대로 함께 표기합니다.
             - **secondaryIdentifier**: 성명 중 이름을 기입합니다. 성과 이름을 분리할 수 없는 경우는 생략합니다.
             - **nameIdentifierType**: `LEGL`(legal) 로 고정됩니다.
@@ -60,7 +60,7 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
             - **legalPersonName**: 법인명을 기입합니다.
             - **legalPersonNameIdentifierType**: `LEGL`(legal) 로 고정됩니다.
         - **customerIdentification**(Optional): 자산을 전송하는 송금인을 VASP에서 식별 가능한 식별자 (UID 또는 IDX)
-    - **accountNumber**(Required): 자산을 전송하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다. 검증 방법은 [지갑 주소 검증하기](https://code-docs-kr.readme.io/reference/%EC%A7%80%EA%B0%91-%EC%A3%BC%EC%86%8C-%EA%B2%80%EC%A6%9D%ED%95%98%EA%B8%B0) 페이지를 참조해 주세요.
+    - **accountNumber**(Required): 자산을 전송하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다. 검증 방법은 [지갑 주소 검증하기](https://alliances.codevasp.com/board/229) 페이지를 참조해 주세요.
   - **Beneficiary**(Required): 자산을 수신 받는 수취인(개인) 또는 법인 및 대표자에 대한 정보를 기입합니다. 요청(request)을 보낼 때, `Beneficiary` 정보를 함께 기입하여 보내야 하며, ①이름과 ②지갑 주소로 구성되어 있습니다. 지갑 주소 정보는 필수입니다. 이름 정보는 `tradePrice`가 트래블룰 적용 기준을 초과할 경우, 필수로 설정해야하고, 초과하지 않을 경우 옵션입니다.
   ※ 이름 정보는 `isExceedingThreshold`가 true일 때 Required, `isExceedingThreshold`가 false일 때 Optional입니다.
     - **beneficiaryPersons**(Required): `Beneficiary` 상위 객체에는 반드시 `beneficiaryPersons`라는 하위 객체가 포함되어야 합니다. `beneficiaryPersons`는 `originatorPersons`와 구조가 동일합니다. `beneficiaryPersons` 하위에는 `naturalPerson` 또는 `legalPerson`로 나눌 수 있습니다. 수취 VASP는 입력한 이름과 실제 수취인의 이름을 비교했을 때, 이름이 다를 경우 거절(denied) 응답을 보냅니다.
@@ -92,7 +92,7 @@ Beneficiary VASP 로서 Originator VASP의 응답에 BeneficiaryVASP 객체를 �
     - **beneficiaryPersons**(Required): 상위 객체인 `Beneficiary` 객체에 반드시 포함되어야 하며 구조는 `originatorPersons` 와 같으므로 요청의 `originatorPersons` 설명을 참고해 주세요.
       - **naturalPerson**(Required): 개인에 대한 정보를 설정하기 위한 객체로 `name`(이름) 정보를 필수로 설정해야 합니다.
       - **legalPerson**(Optional): 법인에 대한 정보를 설정하기 위한 객체로 `name`(이름) 정보를 필수로 설정해야 합니다.
-    - **accountNumber**(Required): 자산을 수신하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다. 검증 방법은 [지갑 주소 검증하기](https://code-docs-kr.readme.io/reference/%EC%A7%80%EA%B0%91-%EC%A3%BC%EC%86%8C-%EA%B2%80%EC%A6%9D%ED%95%98%EA%B8%B0) 페이지를 참조해 주세요.
+    - **accountNumber**(Required): 자산을 수신하는 지갑 주소입니다. tag 나 memo 값이 필요한 경우는 `:` 로 구분해서 하나의 문자열로 만듭니다. 검증 방법은 [지갑 주소 검증하기](https://alliances.codevasp.com/board/229) 페이지를 참조해 주세요.
   - **OriginatingVASP**(Required): 자산을 전송하려는 송신 VASP 정보로 요청의 값을 그대로 복사해서 사용합니다.
   - **BeneficiaryVASP**(Required): 자산을 수신하는 수취 VASP 정보입니다. 구조는 `OriginatingVASP` 와 같으므로 요청의 `OriginatingVASP` 설명을 참고해 주세요.
 
@@ -123,10 +123,10 @@ Originator VASP 로서 Beneficiary VASP의 요청에 `Originator` 및 `Originato
 ### 자산 이전 데이터 요청 IVMS101 Request
 - **ivms101**(Required): IVMS101 메시지 표준을 따르는 송금인(`Originator`), 수취인(`Beneficiary`), 송신 VASP(`OriginatorVASP`), 수취VASP(`BeneficiaryVASP`) 등 가상자산 이전에 관여하는 각 주체를 IVMS101 국제 표준에 맞춰서 정의한 객체입니다. '**자산 이전 데이터 요청**' 에서는 `Beneficiary` 의 이름과 자산 주소, `BeneficiaryVASP` 정보가 반드시 포함돼야 합니다.
   - **Beneficiary**(Required): 자산을 수신 받는 수취인(개인) 또는 법인 및 대표자에 대한 정보를 기입합니다. 요청(request)을 보낼 때, `Beneficiary` 정보를 기입하여 보내야 하며, ①이름과 ②지갑 주소로 구성되어 있습니다. 지갑 주소 정보는 필수입니다. 
-    - **beneficiaryPersons**(Required): `naturalPerson`(개인), `legalPerson`(법인) 두 종류의 객체가 있으며, 법인의 경우에는 `legalPerson`(법인)과 `naturalPerson`(대표자) 정보를 모두 설정해야 합니다. 배열 객체이며, 배열의 각 요소(element)는 `naturalPerson` 또는 `legalPerson` 중 하나 만을 정의해야 합니다. 자세한 내용은 [IVMS101 표준](https://code-docs-kr.readme.io/reference/ivms101-%ED%91%9C%EC%A4%80) 항목을 참고해주세요.
+    - **beneficiaryPersons**(Required): `naturalPerson`(개인), `legalPerson`(법인) 두 종류의 객체가 있으며, 법인의 경우에는 `legalPerson`(법인)과 `naturalPerson`(대표자) 정보를 모두 설정해야 합니다. 배열 객체이며, 배열의 각 요소(element)는 `naturalPerson` 또는 `legalPerson` 중 하나 만을 정의해야 합니다. 자세한 내용은 [IVMS101 표준](https://alliances.codevasp.com/board/296) 항목을 참고해주세요.
       - **naturalPerson**(Required): 개인에 대한 정보를 설정하기 위한 객체로 `name`(이름) 정보를 필수로 설정해야 합니다.
         - **name**(Required):
-          - **nameIdentifier**: 법적 성명을 기입합니다. 국내 VASP 끼리 거래하는 경우는 한글로 기입하고, 해외 VASP 와 거래하는 경우 영문으로 기입합니다. [IVMS101 표준](https://code-docs-kr.readme.io/reference/ivms101-%ED%91%9C%EC%A4%80) 항목을 참고해 주세요.
+          - **nameIdentifier**: 법적 성명을 기입합니다. 국내 VASP 끼리 거래하는 경우는 한글로 기입하고, 해외 VASP 와 거래하는 경우 영문으로 기입합니다. [IVMS101 표준](https://alliances.codevasp.com/board/296) 항목을 참고해 주세요.
             - **primaryIdentifier**: 성명 중 성을 기입합니다. 분리할 수 없는 경우는 성과 이름을 순서대로 함께 표기합니다.
             - **secondaryIdentifier**: 성명 중 이름을 기입합니다. 성과 이름을 분리할 수 없는 경우는 생략합니다.
             - **nameIdentifierType**: `LEGL`(legal) 로 고정됩니다.
@@ -163,10 +163,10 @@ Originator VASP 로서 Beneficiary VASP의 요청에 `Originator` 및 `Originato
 ### 자산 이전 데이터 요청 IVMS101 Response
 - **ivms101**(Required): 응답(response) 객체에서는 `Originator`, `OriginatingVASP` 정보는 TXID로 부터 찾은 데이터로 객체를 생성하고, `Beneficiary`, `BeneficiaryVASP` 데이터는 요청의 객체를 그대로 사용합니다.
   - **Originator**(Required): 송금인(개인) 또는 법인 및 대표자에 대한 정보.
-    - **originatorPersons**(Required): `naturalPerson`(개인), `legalPerson`(법인) 두 종류의 객체가 있으며, 법인의 경우에는 `legalPerson`(법인)과 `naturalPerson`(대표자) 정보를 모두 설정해야 합니다. 배열 객체이며, 배열의 각 요소(element)는 `naturalPerson` 또는 `legalPerson` 중 하나 만을 정의해야 합니다. 자세한 내용은 [IVMS101 표준](https://code-docs-kr.readme.io/reference/ivms101-%ED%91%9C%EC%A4%80) 항목을 참고해주세요.
+    - **originatorPersons**(Required): `naturalPerson`(개인), `legalPerson`(법인) 두 종류의 객체가 있으며, 법인의 경우에는 `legalPerson`(법인)과 `naturalPerson`(대표자) 정보를 모두 설정해야 합니다. 배열 객체이며, 배열의 각 요소(element)는 `naturalPerson` 또는 `legalPerson` 중 하나 만을 정의해야 합니다. 자세한 내용은 [IVMS101 표준](https://alliances.codevasp.com/board/296) 항목을 참고해주세요.
       - **naturalPerson**(Required): 개인에 대한 정보를 설정하기 위한 객체로 `name`(이름) 정보를 필수로 설정해야 합니다.
         - **name**(Required):
-          - **nameIdentifier**: 법적 성명을 기입합니다. 국내 VASP 끼리 거래하는 경우는 한글로 기입하고, 해외 VASP 와 거래하는 경우 영문으로 기입합니다. [IVMS101 표준](https://code-docs-kr.readme.io/reference/ivms101-%ED%91%9C%EC%A4%80) 항목을 참고해 주세요.
+          - **nameIdentifier**: 법적 성명을 기입합니다. 국내 VASP 끼리 거래하는 경우는 한글로 기입하고, 해외 VASP 와 거래하는 경우 영문으로 기입합니다. [IVMS101 표준](https://alliances.codevasp.com/board/296) 항목을 참고해 주세요.
             - **primaryIdentifier**: 성명 중 성을 기입합니다. 분리할 수 없는 경우는 성과 이름을 순서대로 함께 표기합니다.
             - **secondaryIdentifier**: 성명 중 이름을 기입합니다. 성과 이름을 분리할 수 없는 경우는 생략합니다.
             - **nameIdentifierType**: `LEGL`(legal) 로 고정됩니다.
