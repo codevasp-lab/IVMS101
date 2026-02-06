@@ -16,7 +16,7 @@ CODE uses the IVMS101 standard to exchange personal information related to virtu
 
 ## Asset Transfer Authorization
 ### Initial IVMS101 from an originator VASP
-As an originator VASP, you need to send following to beneficiary VSAP. You should know the entityId of beneficiary from CODE, however, you still do not know their VASP information, thus, only send following objects.
+As an originator VASP, you need to send following to beneficiary VASP. You should know the entityId of beneficiary from CODE, however, you still do not know their VASP information, thus, only send following objects.
 ```
 {
   "Originator": {...},
