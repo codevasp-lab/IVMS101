@@ -19,6 +19,21 @@
               }
             ]
           },
+          "geographicAddress":[
+            {
+              "addressType":"HOME",
+              "streetName":"Teheran-ro",
+              "buildingNumber":"152",
+              "buildingName":"Gangnam Tower",
+              "floor":"10",
+              "room":"1001",
+              "postCode":"06236",
+              "townName":"Seoul",
+              "districtName":"Gangnam-gu",
+              "countrySubDivision":"Seoul",
+              "country":"KR"
+            }
+          ],
           "dateAndPlaceOfBirth":{
             "dateOfBirth":"1990-01-01",
             "placeOfBirth":"LA"
@@ -82,7 +97,7 @@
             "streetName":"Example Street",
             "buildingNumber":"123",
             "buildingName":"Example Building",
-            "postcode":"00000",
+            "postCode":"00000",
             "townName":"Seoul",
             "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
             "countrySubDivision":"N/A",
@@ -115,7 +130,7 @@
             "streetName":"Example Street",
             "buildingNumber":"456",
             "buildingName":"Example Building",
-            "postcode":"00000",
+            "postCode":"00000",
             "townName":"Seoul",
             "addressLine": ["100 Teheran-ro 1-gil, Gangnam-gu", "10th floor"],
             "countrySubDivision":"N/A",
