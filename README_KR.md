@@ -202,7 +202,7 @@ Originator VASP 로서 Beneficiary VASP의 요청에 `Originator` 및 `Originato
   - **BeneficiaryVASP**(Required): 자산을 수신 받은 VASP 정보입니다. 요청의 값을 그대로 복사해서 사용합니다.
 
 * * *
-### Originating natual person 예제
+### Originating natural person 예제
 ```
 "Originator": {
    "originatorPersons":[
@@ -320,7 +320,7 @@ Originator VASP 로서 Beneficiary VASP의 요청에 `Originator` 및 `Originato
 }
 ```
 
-### Beneficiary natual person 예제
+### Beneficiary natural person 예제
 ```
 "Beneficiary": {
    "beneficiaryPersons":[
